@@ -44,7 +44,7 @@ module LimitlessPad
 
     unless key
       raise "No key found at #{key_path}" unless File.exist?(key_path)
-      key = JSON.parse File.open(key_path, 'r')
+      key = JSON.parse File.open(key_path, 'r').read
     end
 
     key = JSON.parse(key.to_json, symbolize_names: true)
